@@ -6,6 +6,8 @@
             <v-file-input
                 show-size
                 label="File input"
+                accept=".dtx, .gda"
+                @change="onFileChange"
             ></v-file-input>
             
         </v-card-text>
@@ -21,6 +23,26 @@
 <script>
 export default {
     name: 'ChartFileInputComponent',
+    methods:{
+        onFileChange(file){
+            if(!file){
+                console.log('File Input reset');
+                return;
+            }
+            console.log(file);
+            
+            this.createDataObject(file);
+        },
+        createDataObject(file){
+            const freader = new FileReader();
+            const encoding = "Shift-JIS";
+            freader.onload = (e) => {
+                console.log(e.target);
+                
+            };
+            freader.readAsText(file, encoding);
+        }
+    }
     
 }
 </script>
