@@ -30,7 +30,10 @@
     </v-app-bar>    
 
     <v-main>
+      <!--Keep-alive ensures router view components do not get destroyed, only hidden from view -->
+      <keep-alive>
       <router-view/>
+      </keep-alive>
     </v-main>
 
     <v-footer app>
