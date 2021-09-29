@@ -49,10 +49,10 @@
 </template>
 
 <script>
+import DtxChart from './3rdParty/DtxChart';
 
 export default {
   name: 'App',
-
   data: () => ({
     //:to="{name: item.routeName}"
     tab: 1,
@@ -64,5 +64,9 @@ export default {
         ],
     right: null
   }),
+  methods:{},
+  created() {
+      console.log(DtxChart);
+  }
 };
 </script>

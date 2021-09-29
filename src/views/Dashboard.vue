@@ -79,11 +79,11 @@ export default {
       return {
         tab: null,        
         items: [
-          { tab: 'One', content: 'Tab 1 Content', src: require('../assets/huge_image_test.png')  },
-          { tab: 'Two', content: 'Tab 2 Content', src: require('../assets/logo.png') },
-          { tab: 'Three', content: 'Tab 3 Content', src: require('../assets/logo.png') },
-          { tab: 'Four', content: 'Tab 4 Content', src: require('../assets/logo.png') },
-          { tab: 'Five', content: 'Tab 5 Content', src: require('../assets/logo.png') }
+          { tab: 'One', content: 'Tab 1 Content', src: require('../assets/images/huge_image_test.png')  },
+          { tab: 'Two', content: 'Tab 2 Content', src: require('../assets/images/logo.svg') },
+          { tab: 'Three', content: 'Tab 3 Content', src: require('../assets/images/logo.svg') },
+          { tab: 'Four', content: 'Tab 4 Content', src: require('../assets/images/logo.png') },
+          { tab: 'Five', content: 'Tab 5 Content', src: require('../assets/images/logo.png') }
         ]
       }
     },
@@ -94,7 +94,7 @@ export default {
       console.log("Dashboard beforeCreate")
     },
     created() {
-      console.log("Dashboard created")
+      console.log("Dashboard created");
     },
     beforeMount() {
       console.log("Dashboard beforeMount")

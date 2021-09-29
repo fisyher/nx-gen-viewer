@@ -74,8 +74,8 @@ export default {
     }),
     methods: {
         addItem(){
+            //
             const newID = this.BRPropItems.length;
-            console.log(newID);
             const newBRItem = {
                 id: newID,
                 startTime: Number(this.formStartTime),
