@@ -34,6 +34,7 @@
         <v-spacer></v-spacer>
         <v-btn
         color="warning"
+        @click="onRedraw"
         >Re-draw</v-btn>
     </v-card-actions>
     </v-card>
@@ -41,7 +42,7 @@
 
 <script>
 export default {
-    name: 'DrawOptionsComponent',
+    name: 'DrawOptionsComponent',    
     data(){
         return {
             checkbox: true,
@@ -76,6 +77,23 @@ export default {
             ]
         }
     },
+    methods:{
+        onRedraw(){
+            this.$emit("redraw-chart", this.currentConfig());
+        },
+        currentConfig(){
+            return {
+                selectedDiff: this.selectedDiff,
+                selectedFactor: this.selectedFactor,
+                selectedHeight: this.selectedHeight,
+                selectedMode: this.selectedMode,
+                checkbox: this.checkbox
+            }
+        }
+    },
+    created(){
+        
+    }
 }
 </script>
 

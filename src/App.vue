@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import DtxChart from './3rdParty/DtxChart';
+
 
 export default {
   name: 'App',
@@ -66,7 +66,7 @@ export default {
   }),
   methods:{},
   created() {
-      console.log(DtxChart);
+      
   }
 };
 </script>

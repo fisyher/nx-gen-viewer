@@ -15,6 +15,7 @@
             <v-spacer></v-spacer>
             <v-btn
             color="warning"
+
             >Clear</v-btn>
         </v-card-actions>
     </v-card>
@@ -26,7 +27,9 @@ export default {
     methods:{
         onFileChange(file){
             if(!file){
+                //May trigger twice upon X
                 console.log('File Input reset');
+                this.$emit('file-reset');
                 return;
             }
             console.log(file);
@@ -36,9 +39,11 @@ export default {
         createDataObject(file){
             const freader = new FileReader();
             const encoding = "Shift-JIS";
+            const arrayString = file.name.split(".");
+            const extension = arrayString[arrayString.length - 1];
             freader.onload = (e) => {
-                console.log(e.target);
-                
+                //console.log(e.target);
+                this.$emit('file-loaded', e.target.result, extension);
             };
             freader.readAsText(file, encoding);
         }
